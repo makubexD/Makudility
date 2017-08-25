@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace Codility.Exams
 {
@@ -6,20 +7,18 @@ namespace Codility.Exams
     {
         static void Main(string[] args)
         {
-
-
             var methodBinayGap = BinaryGap(20); // Lesson 01 - Iterations
 
-            var methodOddOccurrencesInArray = OddOccurrencesInArray(new[] { 9, 3, 9, 3, 9, 7, 9, 7 }); // Lesson 02 - Arrays
-            var methodCyclicRotation = CyclicRotation(new[] { 3, 8, 9, 7, 6 }, 0); // Lesson 02 - Arrays
+            var methodOddOccurrencesInArray = OddOccurrencesInArray(new[] {9, 3, 9, 3, 9, 7, 9, 7}); // Lesson 02 - Arrays
+            var methodCyclicRotation = CyclicRotation(new[] {3, 8, 9, 7, 6}, 0); // Lesson 02 - Arrays
 
-            var methodPermMissingElem = PermMissingElem(new[] { 2, 3, 1, 5 }); // Lesson 03 - Time Complexity
+            var methodPermMissingElem = PermMissingElem(new[] {2, 3, 1, 5}); // Lesson 03 - Time Complexity
             var methodFrogJmp = FrogJmp(10, 69, 20); // Lesson 03 - Time Complexity
-            var methodTapeEquilibrium = TapeEquilibrium(new[] { 3, 1, 2, 4, 3 }); // Lesson 03 - Time Complexity
+            var methodTapeEquilibrium = TapeEquilibrium(new[] {3, 1, 2, 4, 3}); // Lesson 03 - Time Complexity
 
-            var methodMissingInteger = MissingInteger(new[] { -1, -2, 0, 1, 2, 4, 5, 13 }); // Lesson 04 - Counting Elements
-            var methodPermCheck = PermCheck(new[] { 4, 1, 3 }); // Lesson 04 - Counting Elements
-            var methodFrogRiverOne = FrogRiverOne(5, new[] { 1, 3, 1, 4, 2, 3, 5, 4 }); // Lesson 04 - Counting Elements
+            var methodMissingInteger = MissingInteger(new[] {-1, -2, 0, 1, 2, 4, 5, 13}); // Lesson 04 - Counting Elements
+            var methodPermCheck = PermCheck(new[] {4, 1, 3}); // Lesson 04 - Counting Elements
+            var methodFrogRiverOne = FrogRiverOne(5, new[] {1, 3, 1, 4, 2, 3, 5, 4}); // Lesson 04 - Counting Elements
             var methodMaxCounters = MaxCounters(5, new[] {3, 4, 4, 6, 1, 4, 4}); // Lesson 04 - Counting Elements
 
             var methodPassingCars = PassingCars(new[] {0, 1, 0, 1, 1}); //Lesson 05 - Prefix Sums
@@ -27,8 +26,42 @@ namespace Codility.Exams
             var methodMinAvgTwoSlice = MinAvgTwoSlice(new[] {4, 2, 2, 5, 1, 5, 8}); //Lesson 05 - Prefix Sums
             var methodGenomicRangeQuery = GenomicRangeQuery("CAGCCTA", new[] {2, 5, 0}, new[] {4, 5, 6}); //Lesson 05 - Prefix Sums
 
-            Console.WriteLine(string.Join(",", methodGenomicRangeQuery));
-            //Console.WriteLine(methodMinAvgTwoSlice);
+            var methodDistinct = Distinct(new[] {2, 1, 1, 2, 3, 1}); // Lesson 06 - Sorting
+            var methodTriangle = Triangle(new[] {10, 2, 5, 1, 8, 20}); // Lesson 06 - Sorting
+            var methodMaxProductOfThree = MaxProductOfThree(new[] {-3, 1, 2, -2, 5, 6}); // Lesson 06 - Sorting
+            var methodNumberOfDiscIntersections = NumberOfDiscIntersections(new[] {1, 5, 2, 1, 4, 0}); // Lesson 06 - Sorting
+
+            var methodBrackets = Brackets("([)()]"); // Lesson 07 Stacks and Queues --> using System.Collections.Generic;
+            var methodFish = Fish(new[] {4, 3, 2, 1, 5}, new[] {0, 1, 0, 0, 0}); // Lesson 07 Stacks and Queues --> using System.Collections.Generic;
+            var methodStoneWall = StoneWall(new[] {8, 8, 5, 7, 9, 8, 7, 4, 8}); // Lesson 07 Stacks and Queues --> using System.Collections.Generic;
+            var methodNesting = Nesting("(()(())())"); // Lesson 07 Stacks and Queues
+
+            var methodEquiLeader = EquiLeader(new[] {4, 3, 4, 4, 4, 2}); // Lesson 08 - Leader 
+            var methodDominator = Dominator(new[] {3, 4, 3, 2, 3, -1, 3, 3}); // Lesson 08 - Leader 
+
+            var methodMaxSliceSum = MaxSliceSum(new[] {3, 2, -6, 4, 0}); // Lesson 09 - Maximum slice problem
+            var methodMaxDoubleSliceSum = MaxDoubleSliceSum(new[] {3, 2, 6, -1, 4, 5, -1, 2}); // Lesson 09 - Maximum slice problem
+            var methodMaxProfit = MaxProfit(new[] {23171, 21011, 21123, 21366, 21013, 21367}); // Lesson 09 - Maximum slice problem
+
+            var methodMinPerimeterRectangle = MinPerimeterRectangle(30); // Lesson 10 - Prime and composite numbers
+            var methodCountFactors = CountFactors(24); // Lesson 10 - Prime and composite numbers
+            var methodPeaks = Peaks(new[] {1, 2, 3, 4, 3, 4, 1, 2, 3, 4, 6, 2}); // Lesson 10 - Prime and composite numbers
+            var methodFlags = Flags(new[] {1, 5, 3, 4, 3, 4, 1, 2, 3, 4, 6, 2}); // Lesson 10 - Prime and composite numbers
+
+            var methodCountSemiprimes = Lesson11.CountSemiprimes(26, new[] {1, 4, 16}, new[] {26, 10, 20});
+            var methodCountNonDivisible = Lesson11.CountNonDivisible(new[] {3, 1, 2, 3, 6});
+
+            var methodChocolatesByNumbers = Lesson12.ChocolatesByNumbers(10, 4);
+            var methodCommonPrimeDivisors = Lesson12.CommonPrimeDivisors(new[] {15, 10, 3}, new[] {75, 30, 5});
+
+            var methodFibFrog = Lesson13.FibFrog(new[] {0, 0, 0, 1, 1, 0, 1, 0, 0, 0, 0});
+            var methodLadder = Lesson13.Ladder(new[] {4, 4, 5, 5, 1}, new[] {3, 2, 4, 3, 1});
+
+            var methodMinMaxDivision = Lesson14.MinMaxDivision(3, 5, new[] {2, 1, 5, 1, 2, 2, 2});
+            var methodNailingPlanks = Lesson14.NailingPlanks(new[] {1, 4, 5, 8}, new[] {4, 5, 9, 10}, new[] {4, 6, 7, 10, 2});
+
+            //Console.WriteLine(string.Join(",", methodLadder));
+            Console.WriteLine(methodNailingPlanks);
             //Console.WriteLine(stopWatch.Elapsed.Milliseconds.ToString("D5"));
             Console.ReadLine();
         }
@@ -139,7 +172,6 @@ namespace Codility.Exams
             return res;
         }
 
-
         /// <summary>
         /// Lesson 02 - Arrays
         /// A zero-indexed array A consisting of N integers is given. Rotation of the array means that each element is shifted right by one index, and the last element of the array is also moved to the first place.
@@ -171,7 +203,7 @@ namespace Codility.Exams
 
             return b;
         }
-        
+
 
 
         /// <summary>
@@ -214,8 +246,9 @@ namespace Codility.Exams
                 sum = sum + A[i];
             }
 
-            return (int)(PermSum(n + 1) - sum);
+            return (int) (PermSum(n + 1) - sum);
         }
+
         private static long PermSum(long n)
         {
             return n * (n + 1) / 2;
@@ -593,24 +626,31 @@ namespace Codility.Exams
             var B = new int[N];
             var maxCounter = 0;
             var counter = 0;
-            for (var i = 0; i < A.Length; i++) {
-                if (A[i] < N + 1) {
+            for (var i = 0; i < A.Length; i++)
+            {
+                if (A[i] < N + 1)
+                {
                     B[A[i] - 1]++;
-                    if (maxCounter < B[A[i] - 1]) {
+                    if (maxCounter < B[A[i] - 1])
+                    {
                         maxCounter = B[A[i] - 1];
                     }
-                
+
                 }
-                else if (maxCounter != counter) {
-                    for (var j = 0; j < B.Length; j++) {
+                else if (maxCounter != counter)
+                {
+                    for (var j = 0; j < B.Length; j++)
+                    {
                         B[j] = maxCounter;
                     }
-                
+
                     counter = maxCounter;
                 }
             }
             return B;
         }
+
+
 
         /// <summary>
         /// Lesson 05 - Prefix Sums
@@ -658,16 +698,19 @@ namespace Codility.Exams
         {
             long east = 0;
             long passingCars = 0;
-            for (var i = 0; (i < A.Length); i++) {
-                if (A[i] == 0) {
+            for (var i = 0; (i < A.Length); i++)
+            {
+                if (A[i] == 0)
+                {
                     east++;
                 }
-                else {
+                else
+                {
                     passingCars += east;
                 }
-            
+
             }
-            return passingCars > 1000000000 ? -1 : (int)passingCars;
+            return passingCars > 1000000000 ? -1 : (int) passingCars;
         }
 
         /// <summary>
@@ -694,7 +737,7 @@ namespace Codility.Exams
         {
             return B / K - A / K + (A % K == 0 ? 1 : 0);
         }
-        
+
         /// <summary>
         /// Lesson 05 - Prefix Sum
         /// A non-empty zero-indexed array A consisting of N integers is given. A pair of integers (P, Q), such that 0 ≤ P &lt; Q &lt; N, is called a slice of array A (notice that the slice contains at least two elements). The average of a slice (P, Q) is the sum of A[P] + A[P + 1] + ... + A[Q] divided by the length of the slice. To be precise, the average equals (A[P] + A[P + 1] + ... + A[Q]) / (Q − P + 1).
@@ -744,7 +787,8 @@ namespace Codility.Exams
             if (A.Length == 1 || A.Length == 2) return result;
 
             var minAvg = Double.MaxValue;
-            for (var i = 0; i < A.Length - 2; i++) {
+            for (var i = 0; i < A.Length - 2; i++)
+            {
                 var currAvg = Math.Min((A[i] + A[i + 1]) / 2d, (A[i] + A[i + 1] + A[i + 2]) / 3d);
                 if (!(currAvg < minAvg)) continue;
                 minAvg = currAvg;
@@ -752,7 +796,7 @@ namespace Codility.Exams
             }
             return (A[A.Length - 2] + A[A.Length - 1]) / 2d < minAvg ? A.Length - 2 : result;
         }
-        
+
         /// <summary>
         /// Lesson 05 - Prefix Sum
         /// A DNA sequence can be represented as a string consisting of the letters A, C, G and T, which correspond to the types of successive nucleotides in the sequence. Each nucleotide has an impact factor, which is an integer. Nucleotides of types A, C, G and T have impact factors of 1, 2, 3 and 4, respectively. You are going to answer several queries of the form: What is the minimal impact factor of nucleotides contained in a particular part of the given DNA sequence?
@@ -812,7 +856,7 @@ namespace Codility.Exams
             var A = new int[aLen];
             for (var i = 0; i < aLen; i++)
             {
-                A[i] = (int)char.GetNumericValue(sAsCharArray[i]);
+                A[i] = (int) char.GetNumericValue(sAsCharArray[i]);
             }
 
             var M = P.Length;
@@ -822,7 +866,7 @@ namespace Codility.Exams
 
             for (var i = 0; i < aLen; i++)
             {
-                switch(A[i])
+                switch (A[i])
                 {
                     case 1:
                         sum1 += 1;
@@ -849,7 +893,7 @@ namespace Codility.Exams
                 var rangeLow = P[i];
                 var rangeHigh = Q[i];
 
-                for (var j = 0; j < 4; j++ )
+                for (var j = 0; j < 4; j++)
                 {
                     if (F[rangeHigh + 1, j] - F[rangeLow, j] <= 0) continue;
                     result[i] = j + 1;
@@ -862,5 +906,1045 @@ namespace Codility.Exams
         }
 
 
+
+        /// <summary>
+        /// Lesson 06 - Sorting
+        /// Write a function
+        ///
+        ///class Solution { public int solution(int[] A); }
+        ///that, given a zero-indexed array A consisting of N integers, returns the number of distinct values in array A.
+        ///
+        ///Assume that:
+        ///
+        ///N is an integer within the range [0..100,000];
+        ///each element of array A is an integer within the range [−1,000,000..1,000,000].
+        ///For example, given array A consisting of six elements such that:
+        ///
+        /// A[0] = 2    A[1] = 1    A[2] = 1
+        /// A[3] = 2    A[4] = 3    A[5] = 1
+        ///the function should return 3, because there are 3 distinct values appearing in array A, namely 1, 2 and 3.
+        /// </summary>
+        /// <param name="A"></param>
+        /// <returns></returns>
+        public static int Distinct(int[] A)
+        {
+            var result = 1;
+
+            if (A.Length == 0) return 0;
+
+            Array.Sort(A);
+
+            for (var i = 1; i < A.Length; i++)
+            {
+                if (A[i] != A[i - 1]) result++;
+            }
+
+            return result;
+        }
+
+        /// <summary>
+        /// Lesson 06 - Sorting
+        /// A zero-indexed array A consisting of N integers is given. A triplet (P, Q, R) is triangular if 0 ≤ P &lt; Q &lt; R &lt; N and:
+        ///
+        ///A[P] + A[Q] &gt; A[R],
+        ///A[Q] + A[R] &gt; A[P],
+        ///A[R] + A[P] &gt; A[Q].
+        ///For example, consider array A such that:
+        ///
+        ///  A[0] = 10    A[1] = 2    A[2] = 5
+        ///  A[3] = 1     A[4] = 8    A[5] = 20
+        ///Triplet (0, 2, 4) is triangular.
+        ///
+        ///Write a function:
+        ///
+        ///class Solution { public int solution(int[] A); }
+        ///that, given a zero-indexed array A consisting of N integers, returns 1 if there exists a triangular triplet for this array and returns 0 otherwise.
+        ///
+        ///For example, given array A such that:
+        ///
+        ///  A[0] = 10    A[1] = 2    A[2] = 5
+        ///  A[3] = 1     A[4] = 8    A[5] = 20
+        ///the function should return 1, as explained above. Given array A such that:
+        ///
+        ///  A[0] = 10    A[1] = 50    A[2] = 5
+        ///  A[3] = 1
+        ///the function should return 0.
+        ///
+        ///Assume that:
+        ///
+        ///N is an integer within the range [0..100,000];
+        ///each element of array A is an integer within the range [−2,147,483,648..2,147,483,647].
+        /// </summary>
+        /// <param name="A"></param>
+        /// <returns></returns>
+        public static int Triangle(int[] A)
+        {
+            if (A.Length < 3)
+                return 0;
+
+            Array.Sort(A);
+
+            for (var i = 0; i < A.Length - 2; i++)
+            {
+                if (A[i] + A[i + 1] > A[i + 2])
+                    return 1;
+            }
+
+            return 0;
+        }
+
+        /// <summary>
+        /// Lesson 06 - Sorting
+        /// A non-empty zero-indexed array A consisting of N integers is given. The product of triplet (P, Q, R) equates to A[P] * A[Q] * A[R] (0 ≤ P &lt; Q &lt; R &lt; N).
+        ///
+        ///For example, array A such that:
+        ///
+        ///  A[0] = -3
+        ///  A[1] = 1
+        ///  A[2] = 2
+        ///  A[3] = -2
+        ///  A[4] = 5
+        ///  A[5] = 6
+        ///contains the following example triplets:
+        ///
+        ///(0, 1, 2), product is −3 * 1 * 2 = −6
+        ///(1, 2, 4), product is 1 * 2 * 5 = 10
+        ///(2, 4, 5), product is 2 * 5 * 6 = 60
+        ///Your goal is to find the maximal product of any triplet.
+        ///
+        ///Write a function:
+        ///
+        ///class Solution { public int solution(int[] A); }
+        ///that, given a non-empty zero-indexed array A, returns the value of the maximal product of any triplet.
+        ///
+        ///For example, given array A such that:
+        ///
+        ///  A[0] = -3
+        ///  A[1] = 1
+        ///  A[2] = 2
+        ///  A[3] = -2
+        ///  A[4] = 5
+        ///  A[5] = 6
+        ///the function should return 60, as the product of triplet (2, 4, 5) is maximal.
+        ///
+        ///Assume that:
+        ///
+        ///N is an integer within the range [3..100,000];
+        ///each element of array A is an integer within the range [−1,000..1,000].
+        /// </summary>
+        /// <param name="A"></param>
+        /// <returns></returns>
+        public static int MaxProductOfThree(int[] A)
+        {
+            Array.Sort(A);
+            return Math.Max(A[A.Length - 1] * A[A.Length - 2] * A[A.Length - 3], A[0] * A[1] * A[A.Length - 1]);
+        }
+
+        /// <summary>
+        /// Lesson 06 - Sorting
+        /// We draw N discs on a plane. The discs are numbered from 0 to N − 1. A zero-indexed array A of N non-negative integers, specifying the radiuses of the discs, is given. The J-th disc is drawn with its center at (J, 0) and radius A[J].
+        ///
+        ///We say that the J-th disc and K-th disc intersect if J ≠ K and the J-th and K-th discs have at least one common point (assuming that the discs contain their borders).
+        ///
+        ///The figure below shows discs drawn for N = 6 and A as follows:
+        ///
+        ///  A[0] = 1
+        ///  A[1] = 5
+        ///  A[2] = 2
+        ///  A[3] = 1
+        ///  A[4] = 4
+        ///  A[5] = 0
+        /// 
+        /// There are eleven (unordered) pairs of discs that intersect, namely:
+        ///
+        ///discs 1 and 4 intersect, and both intersect with all the other discs;
+        ///disc 2 also intersects with discs 0 and 3.
+        ///Write a function:
+        ///
+        ///class Solution { public int solution(int[] A); }
+        ///that, given an array A describing N discs as explained above, returns the number of (unordered) pairs of intersecting discs. The function should return −1 if the number of intersecting pairs exceeds 10,000,000.
+        ///
+        ///Given array A shown above, the function should return 11, as explained above.
+        ///
+        ///Assume that:
+        ///
+        ///N is an integer within the range [0..100,000];
+        ///each element of array A is an integer within the range [0..2,147,483,647].
+        /// </summary>
+        /// <param name="A"></param>
+        /// <returns></returns>
+        public static int NumberOfDiscIntersections(int[] A)
+        {
+            var right = new long[A.Length];
+            var left = new long[A.Length];
+            for (var i = 0; i < A.Length; ++i)
+            {
+                right[i] = (long) i + A[i];
+                left[i] = (long) i - A[i];
+            }
+            Array.Sort(right);
+            Array.Sort(left);
+
+            long nonintersect = 0;
+            var iright = A.Length - 1;
+            var ileft = A.Length - 1;
+            while (iright >= 0 && ileft >= 0)
+            {
+                if (left[ileft] > right[iright])
+                {
+                    nonintersect += iright + 1;
+                    ileft--;
+                }
+                else
+                {
+                    iright--;
+                }
+            }
+
+            var intersect = (long) A.Length * (A.Length - 1) / 2 - nonintersect;
+            if (intersect > 1e7) return -1;
+            return (int) intersect;
+        }
+
+
+
+        /// <summary>
+        /// Lesson 07 - Stacks and Queues
+        /// A string S consisting of N characters is considered to be properly nested if any of the following conditions is true:
+        ///
+        ///S is empty;
+        ///S has the form "(U)" or "[U]" or "{U}" where U is a properly nested string;
+        ///S has the form "VW" where V and W are properly nested strings.
+        ///For example, the string "{[()()]}" is properly nested but "([)()]" is not.
+        ///
+        ///Write a function:
+        ///
+        ///class Solution { public int solution(string S); }
+        ///that, given a string S consisting of N characters, returns 1 if S is properly nested and 0 otherwise.
+        ///
+        ///For example, given S = "{[()()]}", the function should return 1 and given S = "([)()]", the function should return 0, as explained above.
+        ///
+        ///Assume that:
+        ///
+        ///N is an integer within the range [0..200,000];
+        ///string S consists only of the following characters: "(", "{", "[", "]", "}" and/or ")".
+        /// </summary>
+        /// <param name="S"></param>
+        /// <returns></returns>
+        public static int Brackets(string S)
+        {
+            if (S == null || S.Length == 1)
+                return 0;
+            if (S.Length == 0)
+                return 1;
+
+            var stack = new Stack<char>();
+
+            foreach (char bracket in S)
+                if (stack.Count > 0)
+                {
+                    if (IsReversedBracket(stack.Peek(), bracket))
+                        stack.Pop();
+                    else
+                        stack.Push(bracket);
+                }
+                else
+                    stack.Push(bracket);
+
+            return stack.Count > 0 ? 0 : 1;
+        }
+        public static bool IsReversedBracket(char left, char right)
+        {
+            switch (left)
+            {
+                case '{':
+                    return right == '}';
+                case '(':
+                    return right == ')';
+                case '[':
+                    return right == ']';
+                default:
+                    return false;
+            }
+        }
+
+        /// <summary>
+        /// Lesson 07 - Stacks and Queues
+        /// You are given two non-empty zero-indexed arrays A and B consisting of N integers. Arrays A and B represent N voracious fish in a river, ordered downstream along the flow of the river.
+        ///
+        ///The fish are numbered from 0 to N − 1. If P and Q are two fish and P &lt; Q, then fish P is initially upstream of fish Q. Initially, each fish has a unique position.
+        ///
+        ///Fish number P is represented by A[P] and B[P]. Array A contains the sizes of the fish. All its elements are unique. Array B contains the directions of the fish. It contains only 0s and/or 1s, where:
+        ///
+        ///0 represents a fish flowing upstream,
+        ///1 represents a fish flowing downstream.
+        ///If two fish move in opposite directions and there are no other (living) fish between them, they will eventually meet each other. Then only one fish can stay alive − the larger fish eats the smaller one. More precisely, we say that two fish P and Q meet each other when P &lt; Q, B[P] = 1 and B[Q] = 0, and there are no living fish between them. After they meet:
+        ///
+        ///If A[P] &gt; A[Q] then P eats Q, and P will still be flowing downstream,
+        ///If A[Q] &gt; A[P] then Q eats P, and Q will still be flowing upstream.
+        ///We assume that all the fish are flowing at the same speed. That is, fish moving in the same direction never meet. The goal is to calculate the number of fish that will stay alive.
+        ///
+        ///For example, consider arrays A and B such that:
+        ///
+        ///  A[0] = 4    B[0] = 0
+        ///  A[1] = 3    B[1] = 1
+        ///  A[2] = 2    B[2] = 0
+        ///  A[3] = 1    B[3] = 0
+        ///  A[4] = 5    B[4] = 0
+        ///Initially all the fish are alive and all except fish number 1 are moving upstream. Fish number 1 meets fish number 2 and eats it, then it meets fish number 3 and eats it too. Finally, it meets fish number 4 and is eaten by it. The remaining two fish, number 0 and 4, never meet and therefore stay alive.
+        ///
+        ///Write a function:
+        ///
+        ///class Solution { public int solution(int[] A, int[] B); }
+        ///that, given two non-empty zero-indexed arrays A and B consisting of N integers, returns the number of fish that will stay alive.
+        ///
+        ///For example, given the arrays shown above, the function should return 2, as explained above.
+        ///
+        ///Assume that:
+        ///
+        ///N is an integer within the range [1..100,000];
+        ///each element of array A is an integer within the range [0..1,000,000,000];
+        ///each element of array B is an integer that can have one of the following values: 0, 1;
+        ///the elements of A are all distinct.
+        /// </summary>
+        /// <param name="A"></param>
+        /// <param name="B"></param>
+        /// <returns></returns>
+        public static int Fish(int[] A, int[] B)
+        {
+            var count = A.Length;
+        
+            var upStream = new Stack<int>();
+        
+            for(int i = 0, len = count; i < len; i++)
+            {
+                if(B[i] == 1)
+                    upStream.Push(A[i]);
+                else
+                {
+                    while(upStream.Count > 0)
+                    {
+                        count--;
+                        if(upStream.Peek() > A[i])
+                        {
+                            break;
+                        }
+                        upStream.Pop();
+                    }
+                }
+            }
+            return count;
+        }
+
+        /// <summary>
+        /// Lesson 07 - Stacks and Queues
+        /// You are going to build a stone wall. The wall should be straight and N meters long, and its thickness should be constant; however, it should have different heights in different places. The height of the wall is specified by a zero-indexed array H of N positive integers. H[I] is the height of the wall from I to I+1 meters to the right of its left end. In particular, H[0] is the height of the wall's left end and H[N−1] is the height of the wall's right end.
+        ///
+        ///The wall should be built of cuboid stone blocks (that is, all sides of such blocks are rectangular). Your task is to compute the minimum number of blocks needed to build the wall.
+        ///
+        ///Write a function:
+        ///
+        ///class Solution { public int solution(int[] H); }
+        ///that, given a zero-indexed array H of N positive integers specifying the height of the wall, returns the minimum number of blocks needed to build it.
+        ///
+        ///For example, given array H containing N = 9 integers:
+        ///
+        ///  H[0] = 8    H[1] = 8    H[2] = 5
+        ///  H[3] = 7    H[4] = 9    H[5] = 8
+        ///  H[6] = 7    H[7] = 4    H[8] = 8
+        ///the function should return 7. The figure shows one possible arrangement of seven blocks.
+        /// </summary>
+        /// <param name="H"></param>
+        /// <returns></returns>
+        public static int StoneWall(int[] H)
+        {
+            var blocksCount = 0;
+            var blocks = new Stack<int>();
+        
+            for(int i = 0, len = H.Length; i < len; i++)
+            {
+                var height = H[i];
+                var block = 0;
+            
+                while(blocks.Count > 0)
+                {
+                    block = blocks.Peek();
+                    if(block > height)
+                    {
+                        blocks.Pop();
+                    }
+                    else
+                    {
+                        break;
+                    }
+                }
+
+                if (block == height) continue;
+                blocks.Push(height);
+                blocksCount++;
+            }
+        
+            return blocksCount;
+        }
+
+        /// <summary>
+        /// Lesson07 - Stacks and Queues
+        /// A string S consisting of N characters is called properly nested if:
+        ///
+        ///S is empty;
+        ///S has the form "(U)" where U is a properly nested string;
+        ///S has the form "VW" where V and W are properly nested strings.
+        ///For example, string "(()(())())" is properly nested but string "())" isn't.
+        ///
+        ///Write a function:
+        ///
+        ///class Solution { public int solution(string S); }
+        ///that, given a string S consisting of N characters, returns 1 if string S is properly nested and 0 otherwise.
+        ///
+        ///For example, given S = "(()(())())", the function should return 1 and given S = "())", the function should return 0, as explained above.
+        /// </summary>
+        /// <param name="S"></param>
+        /// <returns></returns>
+        public static int Nesting(string S)
+        {
+            var nestCount = 0;
+        
+            for (int i = 0, len = S.Length; i < len; i++)
+            {
+                if(S[i] == '(')
+                    nestCount++;
+                else
+                    nestCount--;
+            
+                if(nestCount < 0 || nestCount > len - i - 1) return 0;
+            }
+        
+            return nestCount == 0 ? 1 : 0;
+        }
+
+
+
+        /// <summary>
+        /// Lesson 08 - Leader
+        /// A non-empty zero-indexed array A consisting of N integers is given.
+        ///
+        ///The leader of this array is the value that occurs in more than half of the elements of A.
+        ///
+        ///An equi leader is an index S such that 0 ≤ S &lt; N − 1 and two sequences A[0], A[1], ..., A[S] and A[S + 1], A[S + 2], ..., A[N − 1] have leaders of the same value.
+        ///
+        ///For example, given array A such that:
+        ///
+        ///    A[0] = 4
+        ///    A[1] = 3
+        ///    A[2] = 4
+        ///    A[3] = 4
+        ///    A[4] = 4
+        ///    A[5] = 2
+        ///we can find two equi leaders:
+        ///
+        ///0, because sequences: (4) and (3, 4, 4, 4, 2) have the same leader, whose value is 4.
+        ///2, because sequences: (4, 3, 4) and (4, 4, 2) have the same leader, whose value is 4.
+        ///The goal is to count the number of equi leaders.
+        ///
+        ///Write a function:
+        ///
+        ///class Solution { public int solution(int[] A); }
+        ///that, given a non-empty zero-indexed array A consisting of N integers, returns the number of equi leaders.
+        ///
+        ///For example, given:
+        ///
+        ///    A[0] = 4
+        ///    A[1] = 3
+        ///    A[2] = 4
+        ///    A[3] = 4
+        ///    A[4] = 4
+        ///    A[5] = 2
+        ///the function should return 2, as explained above.
+        /// </summary>
+        /// <param name="A"></param>
+        /// <returns></returns>
+        public static int EquiLeader(int[] A)
+        {
+            if(A.Length == 1) return 0;
+            
+            var candidateValue = 0;
+            var candidateValueCount = 0;
+        
+            for(int i = 0, len = A.Length; i < len; i++)
+            {
+                if(candidateValueCount == 0)
+                {
+                    candidateValue = A[i];
+                    candidateValueCount++;
+                }
+                else
+                {
+                    if(candidateValue != A[i])
+                        candidateValueCount--;
+                    else
+                        candidateValueCount++;
+                }
+            }
+        
+            if(candidateValueCount == 0)
+                return 0;
+            
+            int leader;
+            var leadersTotalCount = 0; 
+            //leadersTotalCount = A.Count(c => c == candidateValue);
+
+            for (var i = 0; i < A.Length; i++)
+            {
+                if (A[i] == candidateValue)
+                    leadersTotalCount++;
+            }
+
+        
+            if(leadersTotalCount > A.Length / 2)
+                leader = candidateValue;
+            else
+                return 0;
+            
+            var equiLeadersCount = 0;
+            var leftSequenceLeadersCount = 0;
+        
+            for(int i = 0, len = A.Length; i < len; i++)
+            {
+                if(A[i] == leader)
+                    leftSequenceLeadersCount++;
+                
+                var leftSequenceLength = i + 1;
+                if (leftSequenceLeadersCount <= leftSequenceLength / 2) continue;
+                var rightSequenceLength = len - leftSequenceLength;
+                if(leadersTotalCount - leftSequenceLeadersCount > rightSequenceLength / 2)
+                    equiLeadersCount++;
+            }
+        
+            return equiLeadersCount;
+        }
+
+        /// <summary>
+        /// Lesson 08 - Leader
+        /// A zero-indexed array A consisting of N integers is given. The dominator of array A is the value that occurs in more than half of the elements of A.
+        ///
+        ///For example, consider array A such that
+        ///
+        /// A[0] = 3    A[1] = 4    A[2] =  3
+        /// A[3] = 2    A[4] = 3    A[5] = -1
+        /// A[6] = 3    A[7] = 3
+        ///The dominator of A is 3 because it occurs in 5 out of 8 elements of A (namely in those with indices 0, 2, 4, 6 and 7) and 5 is more than a half of 8.
+        ///
+        ///Write a function
+        ///
+        ///class Solution { public int solution(int[] A); }
+        ///that, given a zero-indexed array A consisting of N integers, returns index of any element of array A in which the dominator of A occurs. The function should return −1 if array A does not have a dominator.
+        ///
+        ///Assume that:
+        ///
+        ///N is an integer within the range [0..100,000];
+        ///each element of array A is an integer within the range [−2,147,483,648..2,147,483,647].
+        ///For example, given array A such that
+        ///
+        /// A[0] = 3    A[1] = 4    A[2] =  3
+        /// A[3] = 2    A[4] = 3    A[5] = -1
+        /// A[6] = 3    A[7] = 3
+        ///the function may return 0, 2, 4, 6 or 7, as explained above.
+        /// </summary>
+        /// <param name="A"></param>
+        /// <returns></returns>
+        public static int Dominator(int[] A)
+        {
+            var candidateValue = 0;
+            var candidateValueCount = 0;
+        
+            for(int i = 0, len = A.Length; i < len; i++)
+            {
+                if(candidateValueCount == 0)
+                {
+                    candidateValue = A[i];
+                    candidateValueCount++;
+                }
+                else
+                {
+                    if(candidateValue == A[i])
+                        candidateValueCount++;
+                    else
+                        candidateValueCount--;
+                }
+            }
+        
+            if(candidateValueCount <= 0)
+                return -1;
+        
+            var dominatorIndex = -1;
+            var dominatorTotalCount = 0;
+        
+            for(int i = 0, len = A.Length; i < len; i++)
+            {
+                if (A[i] != candidateValue) continue;
+                dominatorTotalCount++;
+                dominatorIndex = i;
+            }
+        
+            if(dominatorTotalCount > A.Length / 2)
+            {
+                return dominatorIndex;
+            }
+            return -1;
+        }
+
+
+
+        /// <summary>
+        /// Lesson 09 - Maximum slice problem
+        /// A non-empty zero-indexed array A consisting of N integers is given. A pair of integers (P, Q), such that 0 ≤ P ≤ Q &lt; N, is called a slice of array A. The sum of a slice (P, Q) is the total of A[P] + A[P+1] + ... + A[Q].
+        ///
+        ///Write a function:
+        ///
+        ///class Solution { public int solution(int[] A); }
+        ///that, given an array A consisting of N integers, returns the maximum sum of any slice of A.
+        ///
+        ///For example, given array A such that:
+        ///
+        ///A[0] = 3  A[1] = 2  A[2] = -6
+        ///A[3] = 4  A[4] = 0
+        ///the function should return 5 because:
+        ///
+        ///(3, 4) is a slice of A that has sum 4,
+        ///(2, 2) is a slice of A that has sum −6,
+        ///(0, 1) is a slice of A that has sum 5,
+        ///no other slice of A has sum greater than (0, 1).
+        ///Assume that:
+        ///
+        ///N is an integer within the range [1..1,000,000];
+        ///each element of array A is an integer within the range [−1,000,000..1,000,000];
+        ///the result will be an integer within the range [−2,147,483,648..2,147,483,647].
+        /// </summary>
+        /// <param name="A"></param>
+        /// <returns></returns>
+        public static int MaxSliceSum(int[] A)
+        {
+            long maxSlice = int.MinValue;
+            long slice = maxSlice;
+        
+            foreach(var a in A)
+            {
+                slice = Math.Max(a, a + slice);
+                maxSlice = Math.Max(maxSlice, slice);
+            }
+        
+            return (int)maxSlice;
+        }
+        
+        /// <summary>
+        /// Lesson 09 - Maximum slice problem
+        /// A non-empty zero-indexed array A consisting of N integers is given.
+        ///
+        ///A triplet (X, Y, Z), such that 0 ≤ X &lt; Y &lt; Z &lt; N, is called a double slice.
+        ///
+        ///The sum of double slice (X, Y, Z) is the total of A[X + 1] + A[X + 2] + ... + A[Y − 1] + A[Y + 1] + A[Y + 2] + ... + A[Z − 1].
+        ///
+        ///For example, array A such that:
+        ///
+        ///    A[0] = 3
+        ///    A[1] = 2
+        ///    A[2] = 6
+        ///    A[3] = -1
+        ///    A[4] = 4
+        ///    A[5] = 5
+        ///    A[6] = -1
+        ///    A[7] = 2
+        ///contains the following example double slices:
+        ///
+        ///double slice (0, 3, 6), sum is 2 + 6 + 4 + 5 = 17,
+        ///double slice (0, 3, 7), sum is 2 + 6 + 4 + 5 − 1 = 16,
+        ///double slice (3, 4, 5), sum is 0.
+        ///The goal is to find the maximal sum of any double slice.
+        ///
+        ///Write a function:
+        ///
+        ///class Solution { public int solution(int[] A); }
+        ///that, given a non-empty zero-indexed array A consisting of N integers, returns the maximal sum of any double slice.
+        ///
+        ///For example, given:
+        ///
+        ///    A[0] = 3
+        ///    A[1] = 2
+        ///    A[2] = 6
+        ///    A[3] = -1
+        ///    A[4] = 4
+        ///    A[5] = 5
+        ///    A[6] = -1
+        ///    A[7] = 2
+        ///the function should return 17, because no double slice of array A has a sum of greater than 17.
+        ///
+        ///Assume that:
+        ///
+        ///N is an integer within the range [3..100,000];
+        ///each element of array A is an integer within the range [−10,000..10,000].
+        /// </summary>
+        /// <param name="A"></param>
+        /// <returns></returns>
+        public static int MaxDoubleSliceSum(int[] A)
+        {
+            var N = A.Length - 2;
+
+            var leftSums = new int[N];
+            var rightSums = new int[N];
+
+            for (int i = 0, length = N - 1; i < length; i++)
+            {
+                leftSums[i + 1] = Math.Max(0, leftSums[i] + A[i + 1]);
+                rightSums[length - i - 1] = Math.Max(0, rightSums[length - i] + A[length - i + 1]);
+            }
+        
+            var maxSum = int.MinValue;
+
+            for (int i = 0; i < N; i++)
+            {
+                maxSum = Math.Max(maxSum, leftSums[i] + rightSums[i]);
+            }
+
+            return maxSum;
+        }
+        
+        /// <summary>
+        /// Lesson 09 - Maximum slice problem
+        /// A zero-indexed array A consisting of N integers is given. It contains daily prices of a stock share for a period of N consecutive days. If a single share was bought on day P and sold on day Q, where 0 ≤ P ≤ Q &lt; N, then the profit of such transaction is equal to A[Q] − A[P], provided that A[Q] ≥ A[P]. Otherwise, the transaction brings loss of A[P] − A[Q].
+        ///
+        ///For example, consider the following array A consisting of six elements such that:
+        ///
+        ///  A[0] = 23171
+        ///  A[1] = 21011
+        ///  A[2] = 21123
+        ///  A[3] = 21366
+        ///  A[4] = 21013
+        ///  A[5] = 21367
+        ///If a share was bought on day 0 and sold on day 2, a loss of 2048 would occur because A[2] − A[0] = 21123 − 23171 = −2048. If a share was bought on day 4 and sold on day 5, a profit of 354 would occur because A[5] − A[4] = 21367 − 21013 = 354. Maximum possible profit was 356. It would occur if a share was bought on day 1 and sold on day 5.
+        ///
+        ///Write a function,
+        ///
+        ///class Solution { public int solution(int[] A); }
+        ///that, given a zero-indexed array A consisting of N integers containing daily prices of a stock share for a period of N consecutive days, returns the maximum possible profit from one transaction during this period. The function should return 0 if it was impossible to gain any profit.
+        ///
+        ///For example, given array A consisting of six elements such that:
+        ///
+        ///  A[0] = 23171
+        ///  A[1] = 21011
+        ///  A[2] = 21123
+        ///  A[3] = 21366
+        ///  A[4] = 21013
+        ///  A[5] = 21367
+        ///the function should return 356, as explained above.
+        ///
+        ///Assume that:
+        ///
+        ///N is an integer within the range [0..400,000];
+        ///each element of array A is an integer within the range [0..200,000].
+        /// </summary>
+        /// <param name="A"></param>
+        /// <returns></returns>
+        public static int MaxProfit(int[] A)
+        {
+            //if (A.Length < 2) {
+            //    return 0;
+            //}
+
+            //var msf = 0;
+            //var meh = 0;
+            //for (int i = 1; i < A.Length; i++) {
+            //    meh = Math.Max(0, meh + A[i] - A[i - 1]);
+            //    msf = Math.Max(msf, meh);
+            //}
+            //return msf > 0 ? msf : 0;
+
+            // 100 -100
+            var maxValue = int.MaxValue;
+            var maxProfit = 0;
+
+            for (var i = 1; i < A.Length; i++)
+            {
+                if (maxValue > A[i - 1])
+                    maxValue = A[i - 1];
+
+                if (A[i] - maxValue > maxProfit)
+                    maxProfit = A[i] - maxValue;
+            }
+
+            return maxProfit;
+        }
+        
+
+
+        /// <summary>
+        /// Lesson 10 - Prime and composite numbers
+        /// An integer N is given, representing the area of some rectangle.
+        ///
+        ///The area of a rectangle whose sides are of length A and B is A * B, and the perimeter is 2 * (A + B).
+        ///
+        ///The goal is to find the minimal perimeter of any rectangle whose area equals N. The sides of this rectangle should be only integers.
+        ///
+        ///For example, given integer N = 30, rectangles of area 30 are:
+        ///
+        ///(1, 30), with a perimeter of 62,
+        ///(2, 15), with a perimeter of 34,
+        ///(3, 10), with a perimeter of 26,
+        ///(5, 6), with a perimeter of 22.
+        ///Write a function:
+        ///
+        ///class Solution { public int solution(int N); }
+        ///that, given an integer N, returns the minimal perimeter of any rectangle whose area is exactly equal to N.
+        ///
+        ///For example, given an integer N = 30, the function should return 22, as explained above.
+        ///
+        ///Assume that:
+        ///
+        ///N is an integer within the range [1..1,000,000,000].
+        /// </summary>
+        /// <param name="N"></param>
+        /// <returns></returns>
+        public static int MinPerimeterRectangle(int N)
+        {
+            var minp = 2*(N+1);
+            for(var i = 2; i*i <= N; i++){
+                if(N%i == 0)
+                    minp = Math.Min(minp, 2*(i+N/i));
+            }
+            return minp;
+        }
+
+        /// <summary>
+        /// Lesson 10 - Prime and composite numbers
+        /// A positive integer D is a factor of a positive integer N if there exists an integer M such that N = D * M.
+        ///
+        ///For example, 6 is a factor of 24, because M = 4 satisfies the above condition (24 = 6 * 4).
+        ///
+        ///Write a function:
+        ///
+        ///class Solution { public int solution(int N); }
+        ///that, given a positive integer N, returns the number of its factors.
+        ///
+        ///For example, given N = 24, the function should return 8, because 24 has 8 factors, namely 1, 2, 3, 4, 6, 8, 12, 24. There are no other factors of 24.
+        ///
+        ///Assume that:
+        ///
+        ///N is an integer within the range [1..2,147,483,647].
+        /// </summary>
+        /// <param name="N"></param>
+        /// <returns></returns>
+        public static int CountFactors(int N)
+        {
+            var result = 0;
+            var sqrt = (int)Math.Sqrt(N);
+            for (var i = 1; i <= sqrt; i++) {
+                if (N % i == 0)
+                    result += 2;
+            }
+
+            if(sqrt * sqrt == N)
+                result -= 1;
+
+            return result;
+        }
+
+        /// <summary>
+        /// Lesson 10 - Prime and composite numbers
+        /// A non-empty zero-indexed array A consisting of N integers is given.
+        ///
+        ///A peak is an array element which is larger than its neighbors. More precisely, it is an index P such that 0 &lt; P &lt; N − 1,  A[P − 1] &lt; A[P] and A[P] &gt; A[P + 1].
+        ///
+        ///For example, the following array A:
+        ///
+        ///    A[0] = 1
+        ///    A[1] = 2
+        ///    A[2] = 3
+        ///    A[3] = 4
+        ///    A[4] = 3
+        ///    A[5] = 4
+        ///    A[6] = 1
+        ///    A[7] = 2
+        ///    A[8] = 3
+        ///    A[9] = 4
+        ///    A[10] = 6
+        ///    A[11] = 2
+        ///has exactly three peaks: 3, 5, 10.
+        ///
+        ///We want to divide this array into blocks containing the same number of elements. More precisely, we want to choose a number K that will yield the following blocks:
+        ///
+        ///A[0], A[1], ..., A[K − 1],
+        ///A[K], A[K + 1], ..., A[2K − 1],
+        ///...
+        ///A[N − K], A[N − K + 1], ..., A[N − 1].
+        ///What's more, every block should contain at least one peak. Notice that extreme elements of the blocks (for example A[K − 1] or A[K]) can also be peaks, but only if they have both neighbors (including one in an adjacent blocks).
+        ///
+        ///The goal is to find the maximum number of blocks into which the array A can be divided.
+        ///
+        ///Array A can be divided into blocks as follows:
+        ///
+        ///one block (1, 2, 3, 4, 3, 4, 1, 2, 3, 4, 6, 2). This block contains three peaks.
+        ///two blocks (1, 2, 3, 4, 3, 4) and (1, 2, 3, 4, 6, 2). Every block has a peak.
+        ///three blocks (1, 2, 3, 4), (3, 4, 1, 2), (3, 4, 6, 2). Every block has a peak. Notice in particular that the first block (1, 2, 3, 4) has a peak at A[3], because A[2] &lt; A[3] &gt; A[4], even though A[4] is in the adjacent block.
+        ///However, array A cannot be divided into four blocks, (1, 2, 3), (4, 3, 4), (1, 2, 3) and (4, 6, 2), because the (1, 2, 3) blocks do not contain a peak. Notice in particular that the (4, 3, 4) block contains two peaks: A[3] and A[5].
+        ///
+        ///The maximum number of blocks that array A can be divided into is three.
+        ///
+        ///Write a function:
+        ///
+        ///class Solution { public int solution(int[] A); }
+        ///that, given a non-empty zero-indexed array A consisting of N integers, returns the maximum number of blocks into which A can be divided.
+        ///
+        ///If A cannot be divided into some number of blocks, the function should return 0.
+        ///
+        ///For example, given:
+        ///
+        ///    A[0] = 1
+        ///    A[1] = 2
+        ///    A[2] = 3
+        ///    A[3] = 4
+        ///    A[4] = 3
+        ///    A[5] = 4
+        ///    A[6] = 1
+        ///    A[7] = 2
+        ///    A[8] = 3
+        ///    A[9] = 4
+        ///    A[10] = 6
+        ///    A[11] = 2
+        ///the function should return 3, as explained above.
+        ///
+        ///Assume that:
+        ///
+        ///N is an integer within the range [1..100,000];
+        ///each element of array A is an integer within the range [0..1,000,000,000].
+        /// </summary>
+        /// <param name="A"></param>
+        /// <returns></returns>
+        public static int Peaks(int[] A)
+        {
+            var n = A.Length;
+            var peaks = new List<int>();
+            for (var i = 1; i < n - 1; i++) {
+                if (A[i - 1] < A[i] && A[i] > A[i + 1]) {
+                    peaks.Add(i);
+                }
+            }
+
+            var max = 0;
+            for (var i = 1; i < n; i++) {
+                if (n % i != 0) continue;
+                var bi = 0;
+                var block = (n / i);
+                foreach (var p in peaks) {
+                    if (bi * block <= p && p < (bi + 1) * block) {
+                        bi++;
+                    }
+                }
+        
+                if (bi == i) {
+                    max = i;
+                }
+            }
+
+            return max;
+        }
+
+        /// <summary>
+        /// Lesson 10 - Prime and composite numbers
+        /// A non-empty zero-indexed array A consisting of N integers is given.
+        ///
+        ///A peak is an array element which is larger than its neighbours. More precisely, it is an index P such that 0 &lt; P &lt; N − 1 and A[P − 1] &lt; A[P] &gt; A[P + 1].
+        ///
+        ///For example, the following array A:
+        ///
+        ///    A[0] = 1
+        ///    A[1] = 5
+        ///    A[2] = 3
+        ///    A[3] = 4
+        ///    A[4] = 3
+        ///    A[5] = 4
+        ///    A[6] = 1
+        ///    A[7] = 2
+        ///    A[8] = 3
+        ///    A[9] = 4
+        ///    A[10] = 6
+        ///    A[11] = 2
+        ///has exactly four peaks: elements 1, 3, 5 and 10.
+        ///
+        ///You are going on a trip to a range of mountains whose relative heights are represented by array A, as shown in a figure below. You have to choose how many flags you should take with you. The goal is to set the maximum number of flags on the peaks, according to certain rules.
+        /// Flags can only be set on peaks. What's more, if you take K flags, then the distance between any two flags should be greater than or equal to K. The distance between indices P and Q is the absolute value |P − Q|.
+        ///
+        ///For example, given the mountain range represented by array A, above, with N = 12, if you take:
+        ///
+        ///two flags, you can set them on peaks 1 and 5;
+        ///three flags, you can set them on peaks 1, 5 and 10;
+        ///four flags, you can set only three flags, on peaks 1, 5 and 10.
+        ///You can therefore set a maximum of three flags in this case.
+        ///
+        ///Write a function:
+        ///
+        ///class Solution { public int solution(int[] A); }
+        ///that, given a non-empty zero-indexed array A of N integers, returns the maximum number of flags that can be set on the peaks of the array.
+        ///
+        ///For example, the following array A:
+        ///
+        ///    A[0] = 1
+        ///    A[1] = 5
+        ///    A[2] = 3
+        ///    A[3] = 4
+        ///    A[4] = 3
+        ///    A[5] = 4
+        ///    A[6] = 1
+        ///    A[7] = 2
+        ///    A[8] = 3
+        ///    A[9] = 4
+        ///    A[10] = 6
+        ///    A[11] = 2
+        ///the function should return 3, as explained above.
+        ///
+        ///Assume that:
+        ///
+        ///N is an integer within the range [1..400,000];
+        ///each element of array A is an integer within the range [0..1,000,000,000].
+        /// </summary>
+        /// <param name="A"></param>
+        /// <returns></returns>
+        public static int Flags(int[] A)
+        {
+            if (A.Length == 1) return 0;
+
+            List<int> al = new List<int>();
+
+            for (var i = 1; i < A.Length - 1; i++)
+            {
+                if(A[i] > A[i - 1] && A[i] > A[i + 1])
+                    al.Add(i);
+            }
+
+            var s = al.Count;
+            if (s == 1)
+                return 1;
+            if (s == 0)
+                return 0;
+            
+
+            s = (int) Math.Ceiling(Math.Sqrt(A.Length));
+
+            while (s >= 0)
+            {
+                var lp = al[0];
+                var c = 1;
+                for (var i = 1; i < al.Count; i++)
+                {
+                    var d = Math.Abs(al[i] - lp);
+                    if (d < s) continue;
+                    lp = al[i];
+                    c++;
+                    if (c == s)
+                        return c;
+                }
+                s--;
+            }
+            return 0;
+
+        }
     }
 }
