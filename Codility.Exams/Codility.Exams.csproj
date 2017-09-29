@@ -43,10 +43,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ExamBelaFirst.cs" />
+    <Compile Include="ExamBelaSecond.cs" />
     <Compile Include="Lesson11.cs" />
     <Compile Include="Lesson12.cs" />
     <Compile Include="Lesson13.cs" />
     <Compile Include="Lesson14.cs" />
+    <Compile Include="Lesson15.cs" />
+    <Compile Include="Lesson16.cs" />
+    <Compile Include="Lesson17.cs" />
+    <Compile Include="Lesson90.cs" />
+    <Compile Include="Lesson91.cs" />
+    <Compile Include="Lesson92.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

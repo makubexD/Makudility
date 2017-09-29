@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
+using System.Text;
 
 namespace Codility.Exams
 {
@@ -9,61 +11,246 @@ namespace Codility.Exams
         {
             var methodBinayGap = BinaryGap(20); // Lesson 01 - Iterations
 
-            var methodOddOccurrencesInArray = OddOccurrencesInArray(new[] {9, 3, 9, 3, 9, 7, 9, 7}); // Lesson 02 - Arrays
-            var methodCyclicRotation = CyclicRotation(new[] {3, 8, 9, 7, 6}, 0); // Lesson 02 - Arrays
+            var methodOddOccurrencesInArray = OddOccurrencesInArray(new[] { 9, 3, 9, 3, 9, 7, 9, 7 }); // Lesson 02 - Arrays
+            var methodCyclicRotation = CyclicRotation(new[] { 3, 8, 9, 7, 6 }, 0); // Lesson 02 - Arrays
 
-            var methodPermMissingElem = PermMissingElem(new[] {2, 3, 1, 5}); // Lesson 03 - Time Complexity
+            var methodPermMissingElem = PermMissingElem(new[] { 2, 3, 1, 5 }); // Lesson 03 - Time Complexity
             var methodFrogJmp = FrogJmp(10, 69, 20); // Lesson 03 - Time Complexity
-            var methodTapeEquilibrium = TapeEquilibrium(new[] {3, 1, 2, 4, 3}); // Lesson 03 - Time Complexity
+            var methodTapeEquilibrium = TapeEquilibrium(new[] { 3, 1, 2, 4, 3 }); // Lesson 03 - Time Complexity
 
-            var methodMissingInteger = MissingInteger(new[] {-1, -2, 0, 1, 2, 4, 5, 13}); // Lesson 04 - Counting Elements
-            var methodPermCheck = PermCheck(new[] {4, 1, 3}); // Lesson 04 - Counting Elements
-            var methodFrogRiverOne = FrogRiverOne(5, new[] {1, 3, 1, 4, 2, 3, 5, 4}); // Lesson 04 - Counting Elements
-            var methodMaxCounters = MaxCounters(5, new[] {3, 4, 4, 6, 1, 4, 4}); // Lesson 04 - Counting Elements
+            var methodMissingInteger = MissingInteger(new[] { -1, -2, 0, 1, 2, 4, 5, 13 }); // Lesson 04 - Counting Elements
+            var methodPermCheck = PermCheck(new[] { 4, 1, 3 }); // Lesson 04 - Counting Elements
+            var methodFrogRiverOne = FrogRiverOne(5, new[] { 1, 3, 1, 4, 2, 3, 5, 4 }); // Lesson 04 - Counting Elements
+            var methodMaxCounters = MaxCounters(5, new[] { 3, 4, 4, 6, 1, 4, 4 }); // Lesson 04 - Counting Elements
 
-            var methodPassingCars = PassingCars(new[] {0, 1, 0, 1, 1}); //Lesson 05 - Prefix Sums
+            var methodPassingCars = PassingCars(new[] { 0, 1, 0, 1, 1 }); //Lesson 05 - Prefix Sums
             var methodCountDiv = CountDiv(6, 11, 2); //Lesson 05 - Prefix Sums
-            var methodMinAvgTwoSlice = MinAvgTwoSlice(new[] {4, 2, 2, 5, 1, 5, 8}); //Lesson 05 - Prefix Sums
-            var methodGenomicRangeQuery = GenomicRangeQuery("CAGCCTA", new[] {2, 5, 0}, new[] {4, 5, 6}); //Lesson 05 - Prefix Sums
+            var methodMinAvgTwoSlice = MinAvgTwoSlice(new[] { 4, 2, 2, 5, 1, 5, 8 }); //Lesson 05 - Prefix Sums
+            var methodGenomicRangeQuery = GenomicRangeQuery("CAGCCTA", new[] { 2, 5, 0 }, new[] { 4, 5, 6 }); //Lesson 05 - Prefix Sums
 
-            var methodDistinct = Distinct(new[] {2, 1, 1, 2, 3, 1}); // Lesson 06 - Sorting
-            var methodTriangle = Triangle(new[] {10, 2, 5, 1, 8, 20}); // Lesson 06 - Sorting
-            var methodMaxProductOfThree = MaxProductOfThree(new[] {-3, 1, 2, -2, 5, 6}); // Lesson 06 - Sorting
-            var methodNumberOfDiscIntersections = NumberOfDiscIntersections(new[] {1, 5, 2, 1, 4, 0}); // Lesson 06 - Sorting
+            var methodDistinct = Distinct(new[] { 2, 1, 1, 2, 3, 1 }); // Lesson 06 - Sorting
+            var methodTriangle = Triangle(new[] { 10, 2, 5, 1, 8, 20 }); // Lesson 06 - Sorting
+            var methodMaxProductOfThree = MaxProductOfThree(new[] { -3, 1, 2, -2, 5, 6 }); // Lesson 06 - Sorting
+            var methodNumberOfDiscIntersections = NumberOfDiscIntersections(new[] { 1, 5, 2, 1, 4, 0 }); // Lesson 06 - Sorting
 
             var methodBrackets = Brackets("([)()]"); // Lesson 07 Stacks and Queues --> using System.Collections.Generic;
-            var methodFish = Fish(new[] {4, 3, 2, 1, 5}, new[] {0, 1, 0, 0, 0}); // Lesson 07 Stacks and Queues --> using System.Collections.Generic;
-            var methodStoneWall = StoneWall(new[] {8, 8, 5, 7, 9, 8, 7, 4, 8}); // Lesson 07 Stacks and Queues --> using System.Collections.Generic;
+            var methodFish = Fish(new[] { 4, 3, 2, 1, 5 }, new[] { 0, 1, 0, 0, 0 }); // Lesson 07 Stacks and Queues --> using System.Collections.Generic;
+            var methodStoneWall = StoneWall(new[] { 8, 8, 5, 7, 9, 8, 7, 4, 8 }); // Lesson 07 Stacks and Queues --> using System.Collections.Generic;
             var methodNesting = Nesting("(()(())())"); // Lesson 07 Stacks and Queues
 
-            var methodEquiLeader = EquiLeader(new[] {4, 3, 4, 4, 4, 2}); // Lesson 08 - Leader 
-            var methodDominator = Dominator(new[] {3, 4, 3, 2, 3, -1, 3, 3}); // Lesson 08 - Leader 
+            var methodEquiLeader = EquiLeader(new[] { 4, 3, 4, 4, 4, 2 }); // Lesson 08 - Leader 
+            var methodDominator = Dominator(new[] { 3, 4, 3, 2, 3, -1, 3, 3 }); // Lesson 08 - Leader 
 
-            var methodMaxSliceSum = MaxSliceSum(new[] {3, 2, -6, 4, 0}); // Lesson 09 - Maximum slice problem
-            var methodMaxDoubleSliceSum = MaxDoubleSliceSum(new[] {3, 2, 6, -1, 4, 5, -1, 2}); // Lesson 09 - Maximum slice problem
-            var methodMaxProfit = MaxProfit(new[] {23171, 21011, 21123, 21366, 21013, 21367}); // Lesson 09 - Maximum slice problem
+            var methodMaxSliceSum = MaxSliceSum(new[] { 3, 2, -6, 4, 0 }); // Lesson 09 - Maximum slice problem
+            var methodMaxDoubleSliceSum = MaxDoubleSliceSum(new[] { 3, 2, 6, -1, 4, 5, -1, 2 }); // Lesson 09 - Maximum slice problem
+            var methodMaxProfit = MaxProfit(new[] { 23171, 21011, 21123, 21366, 21013, 21367 }); // Lesson 09 - Maximum slice problem
 
             var methodMinPerimeterRectangle = MinPerimeterRectangle(30); // Lesson 10 - Prime and composite numbers
             var methodCountFactors = CountFactors(24); // Lesson 10 - Prime and composite numbers
-            var methodPeaks = Peaks(new[] {1, 2, 3, 4, 3, 4, 1, 2, 3, 4, 6, 2}); // Lesson 10 - Prime and composite numbers
-            var methodFlags = Flags(new[] {1, 5, 3, 4, 3, 4, 1, 2, 3, 4, 6, 2}); // Lesson 10 - Prime and composite numbers
+            var methodPeaks = Peaks(new[] { 1, 2, 3, 4, 3, 4, 1, 2, 3, 4, 6, 2 }); // Lesson 10 - Prime and composite numbers
+            var methodFlags = Flags(new[] { 1, 5, 3, 4, 3, 4, 1, 2, 3, 4, 6, 2 }); // Lesson 10 - Prime and composite numbers
 
-            var methodCountSemiprimes = Lesson11.CountSemiprimes(26, new[] {1, 4, 16}, new[] {26, 10, 20});
-            var methodCountNonDivisible = Lesson11.CountNonDivisible(new[] {3, 1, 2, 3, 6});
+            var methodCountSemiprimes = Lesson11.CountSemiprimes(26, new[] { 1, 4, 16 }, new[] { 26, 10, 20 });
+            var methodCountNonDivisible = Lesson11.CountNonDivisible(new[] { 3, 1, 2, 3, 6 });
 
             var methodChocolatesByNumbers = Lesson12.ChocolatesByNumbers(10, 4);
-            var methodCommonPrimeDivisors = Lesson12.CommonPrimeDivisors(new[] {15, 10, 3}, new[] {75, 30, 5});
+            var methodCommonPrimeDivisors = Lesson12.CommonPrimeDivisors(new[] { 15, 10, 3 }, new[] { 75, 30, 5 });
 
-            var methodFibFrog = Lesson13.FibFrog(new[] {0, 0, 0, 1, 1, 0, 1, 0, 0, 0, 0});
-            var methodLadder = Lesson13.Ladder(new[] {4, 4, 5, 5, 1}, new[] {3, 2, 4, 3, 1});
+            var methodFibFrog = Lesson13.FibFrog(new[] { 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, 0 });
+            var methodLadder = Lesson13.Ladder(new[] { 4, 4, 5, 5, 1 }, new[] { 3, 2, 4, 3, 1 });
 
-            var methodMinMaxDivision = Lesson14.MinMaxDivision(3, 5, new[] {2, 1, 5, 1, 2, 2, 2});
-            var methodNailingPlanks = Lesson14.NailingPlanks(new[] {1, 4, 5, 8}, new[] {4, 5, 9, 10}, new[] {4, 6, 7, 10, 2});
+            var methodMinMaxDivision = Lesson14.MinMaxDivision(3, 5, new[] { 2, 1, 5, 1, 2, 2, 2 });
+            var methodNailingPlanks = Lesson14.NailingPlanks(new[] { 1, 4, 5, 8 }, new[] { 4, 5, 9, 10 }, new[] { 4, 6, 7, 10, 2 });
 
+            var methodAbsDistinct = Lesson15.AbsDistinct(new[] { 3, 4, 5, 5, 2 }); // check
+            var methodCountDistinctSlices = Lesson15.CountDistinctSlices(6, new[] { 3, 4, 5, 5, 2 });
+            var methodCountTriangles = Lesson15.CountTriangles(new[] { 10, 2, 5, 1, 8, 12 });
+            var methodMinAbsSumOfTwo = Lesson15.MinAbsSumOfTwo(new[] { -8, 4, 5 - 10, 3 }); // check
+
+            var metthodMaxNonoverlappingSegments = Lesson16.MaxNonoverlappingSegments(new[] { 1, 3, 7, 9, 9 }, new[] { 5, 6, 8, 9, 10 });
+            var methodTieRopes = Lesson16.TieRopes(4, new[] { 1, 2, 3, 4, 1, 1, 3 });
+
+            var methodNumberSolitaire = Lesson17.NumberSolitaire(new[] { 1, -2, 0, 9, -1, -2 });
+            var methodMinAbsSum = Lesson17.MinAbsSum(new[] { 1, 5, 2, -2 });
+
+            var methodLongestPassword = Lesson90.LongestPassword("test 5 a0A pass007 ?xy1"); // solution not found, check other alternatives
+            var methodFloodDepth = Lesson90.FloodDepth(new[] { 5, 8 });
+            var methodSlalomSkiing = Lesson90.SlalomSkiing(new[] { 1, 5 }); // solution not found, check other alternatives
+
+            var methodDwarfsRafting = Lesson91.DwarfsRafting(4, "1B 1C 4B 1D 2A", "3B 2D"); // solution not found, check other alternatives
+
+            var methodTennisTournament = Lesson92.TennisTournament(5, 3);
+
+
+            var methodTestExamen = ExamTest(new[] { 7, 3, 7, 3, 1, 3, 4, 1 });
+
+            // TO GIVE EXAM
+            var methodMaxTime = ExamBelaFirst.MaxTime(3,2,6,7);
+
+            //var methodCheckSingleSwap = CheckSingleSwap(new[] { 1,4,5,6,7,2 });
+
+       
+            var methodSwapNoIdeaTheBest = SwapNoIdeaTheBest(new[] {1,2,3,4,5,6,7,8,0});
+
+            var methodChainBreaker = ExamBelaSecond.ChainBreaker(new[] {5, 6,7,5,1,4,3});
             //Console.WriteLine(string.Join(",", methodLadder));
-            Console.WriteLine(methodNailingPlanks);
+            Console.WriteLine(methodChainBreaker);
             //Console.WriteLine(stopWatch.Elapsed.Milliseconds.ToString("D5"));
             Console.ReadLine();
+        }
+
+
+        //public static int ChainBreaker(int[] A)
+        //{
+        //    //int len = A.Length;
+        //    //int minCost = A[1]+A[3];
+        //    //int cost;
+        //    //for(int p=1; p<len-3; p++){
+        //    //    for(int q = p+2; q<len-1; q++){
+        //    //        cost = A[p]+A[q];
+        //    //        if(cost < minCost){
+        //    //            minCost = cost;
+        //    //        }
+        //    //    }
+        //    //}
+        //    //return minCost;
+
+        //    int P = 1;
+        //    int result = A.Max();
+        //    for (int Q = 3; Q < A.Length - 1; Q++)
+        //    {//Start the loop with Q = 3
+        //        result = Math.Min(result, A[Q] + A[P]);
+        //        //if (A[P] > A[Q - 1])
+        //        //{
+        //        //    //Update min only with the last element to maintain the constraint P - Q > 1
+        //        //    P = Q - 1;
+        //        //}
+
+        //    }
+        //    return result;
+        //}
+
+        
+        public static bool SwapNoIdeaTheBest(int[] arr)
+        {
+            if(arr.Length <= 1) {
+                Console.WriteLine("Not enough element to swap");
+                return true;
+            }
+            var flag = true;
+            var first = -1;
+            var second = -1;
+
+            for (int i = 1; i < arr.Length; i++) {
+                if (flag) {
+                    if (arr[i - 1] > arr[i]) {
+                        first = i - 1;
+                        flag = false;
+                    }
+                } else {
+                    if (arr[first] <= arr[i]) {
+                        second = i - 1;
+                    }
+                }
+
+                if (second != -1) {
+                    break;
+                }
+            }
+            if(second == -1) {
+                second = arr.Length -1;
+            }
+            if (first == -1) {
+                return false;
+            }
+
+            // Perhaps XOR
+            var temp = arr[first];
+            arr[first] = arr[second];
+            arr[second] = temp;
+
+            //Console.WriteLine("result -->  " + string.Join(",", arr));
+
+            for (var i = 1; i < arr.Length - 1; i++) {
+                if (arr[i - 1] > arr[i]) {
+                    return false;
+                }
+            }
+            return true;
+        }
+
+
+        public static bool CheckSingleSwap(int[] data)
+        {
+            var max = data[0];
+            var maxIndex = 0;
+
+            //find the maximum element in the array
+            for (var i = 0; i < data.Length; i++)
+            {
+                if (data[i] <= max) continue;
+                max = data[i];
+                maxIndex = i;
+            }
+
+            //check whether all the elements before max are less than it
+            // if not you need more swaps to sort
+            for (var j = 0; j < maxIndex; j++)
+            {
+                if (data[j] > max)
+                    return false;
+            }
+
+
+            //check what is next smallest element
+            for (int j = maxIndex + 1; j < data.Length - 1; j++)
+            {
+                if (!(max > data[j] && data[j + 1] < data[j]))
+                    return false;
+            }
+
+            return true;
+        }
+
+
+        public static int ExamTest(int[] A)
+        {
+
+            var dataUnique = A.Select((inputA, index) => new { arrPos = inputA, index }).ToList();
+            var lstPlaces = dataUnique.GroupBy(p => p.arrPos).Select(g => g.First()).ToList();
+
+            List<int> lstKey = new List<int>();
+
+            for (int i = 0; i < A.Length; i++)
+            {
+                var firstOrDefault = lstPlaces.FirstOrDefault(d => d.arrPos == A[i]);
+                if (firstOrDefault != null)
+                {
+                    lstKey.Add(firstOrDefault.index);
+                }
+            }
+
+            var result = lstKey.Max() - lstKey.Min() - 1;
+
+
+
+            return result;
+
+
+            //for(var i = 0;i < A.Length;i++){
+            //    //var key = array_keys($values,$A[$i]);
+            //    var key  = places[]
+            //    last_position[lstIndex[0]] = i;
+            //    //var last_position[lstIndex[0]] = i;
+            //    if(!places != null){
+            //        unset($places[$key[0]]);
+
+            //        if(empty($places)){
+            //            return max($last_position) - min($last_position)+1;
+            //        }
+            //    }
+            //}
+
         }
 
         /// <summary>
@@ -246,7 +433,7 @@ namespace Codility.Exams
                 sum = sum + A[i];
             }
 
-            return (int) (PermSum(n + 1) - sum);
+            return (int)(PermSum(n + 1) - sum);
         }
 
         private static long PermSum(long n)
@@ -710,7 +897,7 @@ namespace Codility.Exams
                 }
 
             }
-            return passingCars > 1000000000 ? -1 : (int) passingCars;
+            return passingCars > 1000000000 ? -1 : (int)passingCars;
         }
 
         /// <summary>
@@ -856,7 +1043,7 @@ namespace Codility.Exams
             var A = new int[aLen];
             for (var i = 0; i < aLen; i++)
             {
-                A[i] = (int) char.GetNumericValue(sAsCharArray[i]);
+                A[i] = (int)char.GetNumericValue(sAsCharArray[i]);
             }
 
             var M = P.Length;
@@ -1079,8 +1266,8 @@ namespace Codility.Exams
             var left = new long[A.Length];
             for (var i = 0; i < A.Length; ++i)
             {
-                right[i] = (long) i + A[i];
-                left[i] = (long) i - A[i];
+                right[i] = (long)i + A[i];
+                left[i] = (long)i - A[i];
             }
             Array.Sort(right);
             Array.Sort(left);
@@ -1101,9 +1288,9 @@ namespace Codility.Exams
                 }
             }
 
-            var intersect = (long) A.Length * (A.Length - 1) / 2 - nonintersect;
+            var intersect = (long)A.Length * (A.Length - 1) / 2 - nonintersect;
             if (intersect > 1e7) return -1;
-            return (int) intersect;
+            return (int)intersect;
         }
 
 
@@ -1213,19 +1400,19 @@ namespace Codility.Exams
         public static int Fish(int[] A, int[] B)
         {
             var count = A.Length;
-        
+
             var upStream = new Stack<int>();
-        
-            for(int i = 0, len = count; i < len; i++)
+
+            for (int i = 0, len = count; i < len; i++)
             {
-                if(B[i] == 1)
+                if (B[i] == 1)
                     upStream.Push(A[i]);
                 else
                 {
-                    while(upStream.Count > 0)
+                    while (upStream.Count > 0)
                     {
                         count--;
-                        if(upStream.Peek() > A[i])
+                        if (upStream.Peek() > A[i])
                         {
                             break;
                         }
@@ -1260,16 +1447,16 @@ namespace Codility.Exams
         {
             var blocksCount = 0;
             var blocks = new Stack<int>();
-        
-            for(int i = 0, len = H.Length; i < len; i++)
+
+            for (int i = 0, len = H.Length; i < len; i++)
             {
                 var height = H[i];
                 var block = 0;
-            
-                while(blocks.Count > 0)
+
+                while (blocks.Count > 0)
                 {
                     block = blocks.Peek();
-                    if(block > height)
+                    if (block > height)
                     {
                         blocks.Pop();
                     }
@@ -1283,7 +1470,7 @@ namespace Codility.Exams
                 blocks.Push(height);
                 blocksCount++;
             }
-        
+
             return blocksCount;
         }
 
@@ -1308,17 +1495,17 @@ namespace Codility.Exams
         public static int Nesting(string S)
         {
             var nestCount = 0;
-        
+
             for (int i = 0, len = S.Length; i < len; i++)
             {
-                if(S[i] == '(')
+                if (S[i] == '(')
                     nestCount++;
                 else
                     nestCount--;
-            
-                if(nestCount < 0 || nestCount > len - i - 1) return 0;
+
+                if (nestCount < 0 || nestCount > len - i - 1) return 0;
             }
-        
+
             return nestCount == 0 ? 1 : 0;
         }
 
@@ -1365,32 +1552,32 @@ namespace Codility.Exams
         /// <returns></returns>
         public static int EquiLeader(int[] A)
         {
-            if(A.Length == 1) return 0;
-            
+            if (A.Length == 1) return 0;
+
             var candidateValue = 0;
             var candidateValueCount = 0;
-        
-            for(int i = 0, len = A.Length; i < len; i++)
+
+            for (int i = 0, len = A.Length; i < len; i++)
             {
-                if(candidateValueCount == 0)
+                if (candidateValueCount == 0)
                 {
                     candidateValue = A[i];
                     candidateValueCount++;
                 }
                 else
                 {
-                    if(candidateValue != A[i])
+                    if (candidateValue != A[i])
                         candidateValueCount--;
                     else
                         candidateValueCount++;
                 }
             }
-        
-            if(candidateValueCount == 0)
+
+            if (candidateValueCount == 0)
                 return 0;
-            
+
             int leader;
-            var leadersTotalCount = 0; 
+            var leadersTotalCount = 0;
             //leadersTotalCount = A.Count(c => c == candidateValue);
 
             for (var i = 0; i < A.Length; i++)
@@ -1399,27 +1586,27 @@ namespace Codility.Exams
                     leadersTotalCount++;
             }
 
-        
-            if(leadersTotalCount > A.Length / 2)
+
+            if (leadersTotalCount > A.Length / 2)
                 leader = candidateValue;
             else
                 return 0;
-            
+
             var equiLeadersCount = 0;
             var leftSequenceLeadersCount = 0;
-        
-            for(int i = 0, len = A.Length; i < len; i++)
+
+            for (int i = 0, len = A.Length; i < len; i++)
             {
-                if(A[i] == leader)
+                if (A[i] == leader)
                     leftSequenceLeadersCount++;
-                
+
                 var leftSequenceLength = i + 1;
                 if (leftSequenceLeadersCount <= leftSequenceLength / 2) continue;
                 var rightSequenceLength = len - leftSequenceLength;
-                if(leadersTotalCount - leftSequenceLeadersCount > rightSequenceLength / 2)
+                if (leadersTotalCount - leftSequenceLeadersCount > rightSequenceLength / 2)
                     equiLeadersCount++;
             }
-        
+
             return equiLeadersCount;
         }
 
@@ -1456,37 +1643,37 @@ namespace Codility.Exams
         {
             var candidateValue = 0;
             var candidateValueCount = 0;
-        
-            for(int i = 0, len = A.Length; i < len; i++)
+
+            for (int i = 0, len = A.Length; i < len; i++)
             {
-                if(candidateValueCount == 0)
+                if (candidateValueCount == 0)
                 {
                     candidateValue = A[i];
                     candidateValueCount++;
                 }
                 else
                 {
-                    if(candidateValue == A[i])
+                    if (candidateValue == A[i])
                         candidateValueCount++;
                     else
                         candidateValueCount--;
                 }
             }
-        
-            if(candidateValueCount <= 0)
+
+            if (candidateValueCount <= 0)
                 return -1;
-        
+
             var dominatorIndex = -1;
             var dominatorTotalCount = 0;
-        
-            for(int i = 0, len = A.Length; i < len; i++)
+
+            for (int i = 0, len = A.Length; i < len; i++)
             {
                 if (A[i] != candidateValue) continue;
                 dominatorTotalCount++;
                 dominatorIndex = i;
             }
-        
-            if(dominatorTotalCount > A.Length / 2)
+
+            if (dominatorTotalCount > A.Length / 2)
             {
                 return dominatorIndex;
             }
@@ -1526,16 +1713,16 @@ namespace Codility.Exams
         {
             long maxSlice = int.MinValue;
             long slice = maxSlice;
-        
-            foreach(var a in A)
+
+            foreach (var a in A)
             {
                 slice = Math.Max(a, a + slice);
                 maxSlice = Math.Max(maxSlice, slice);
             }
-        
+
             return (int)maxSlice;
         }
-        
+
         /// <summary>
         /// Lesson 09 - Maximum slice problem
         /// A non-empty zero-indexed array A consisting of N integers is given.
@@ -1597,7 +1784,7 @@ namespace Codility.Exams
                 leftSums[i + 1] = Math.Max(0, leftSums[i] + A[i + 1]);
                 rightSums[length - i - 1] = Math.Max(0, rightSums[length - i] + A[length - i + 1]);
             }
-        
+
             var maxSum = int.MinValue;
 
             for (int i = 0; i < N; i++)
@@ -1607,7 +1794,7 @@ namespace Codility.Exams
 
             return maxSum;
         }
-        
+
         /// <summary>
         /// Lesson 09 - Maximum slice problem
         /// A zero-indexed array A consisting of N integers is given. It contains daily prices of a stock share for a period of N consecutive days. If a single share was bought on day P and sold on day Q, where 0 ≤ P ≤ Q &lt; N, then the profit of such transaction is equal to A[Q] − A[P], provided that A[Q] ≥ A[P]. Otherwise, the transaction brings loss of A[P] − A[Q].
@@ -1673,7 +1860,7 @@ namespace Codility.Exams
 
             return maxProfit;
         }
-        
+
 
 
         /// <summary>
@@ -1705,10 +1892,11 @@ namespace Codility.Exams
         /// <returns></returns>
         public static int MinPerimeterRectangle(int N)
         {
-            var minp = 2*(N+1);
-            for(var i = 2; i*i <= N; i++){
-                if(N%i == 0)
-                    minp = Math.Min(minp, 2*(i+N/i));
+            var minp = 2 * (N + 1);
+            for (var i = 2; i * i <= N; i++)
+            {
+                if (N % i == 0)
+                    minp = Math.Min(minp, 2 * (i + N / i));
             }
             return minp;
         }
@@ -1736,12 +1924,13 @@ namespace Codility.Exams
         {
             var result = 0;
             var sqrt = (int)Math.Sqrt(N);
-            for (var i = 1; i <= sqrt; i++) {
+            for (var i = 1; i <= sqrt; i++)
+            {
                 if (N % i == 0)
                     result += 2;
             }
 
-            if(sqrt * sqrt == N)
+            if (sqrt * sqrt == N)
                 result -= 1;
 
             return result;
@@ -1822,24 +2011,30 @@ namespace Codility.Exams
         {
             var n = A.Length;
             var peaks = new List<int>();
-            for (var i = 1; i < n - 1; i++) {
-                if (A[i - 1] < A[i] && A[i] > A[i + 1]) {
+            for (var i = 1; i < n - 1; i++)
+            {
+                if (A[i - 1] < A[i] && A[i] > A[i + 1])
+                {
                     peaks.Add(i);
                 }
             }
 
             var max = 0;
-            for (var i = 1; i < n; i++) {
+            for (var i = 1; i < n; i++)
+            {
                 if (n % i != 0) continue;
                 var bi = 0;
                 var block = (n / i);
-                foreach (var p in peaks) {
-                    if (bi * block <= p && p < (bi + 1) * block) {
+                foreach (var p in peaks)
+                {
+                    if (bi * block <= p && p < (bi + 1) * block)
+                    {
                         bi++;
                     }
                 }
-        
-                if (bi == i) {
+
+                if (bi == i)
+                {
                     max = i;
                 }
             }
@@ -1915,7 +2110,7 @@ namespace Codility.Exams
 
             for (var i = 1; i < A.Length - 1; i++)
             {
-                if(A[i] > A[i - 1] && A[i] > A[i + 1])
+                if (A[i] > A[i - 1] && A[i] > A[i + 1])
                     al.Add(i);
             }
 
@@ -1924,9 +2119,9 @@ namespace Codility.Exams
                 return 1;
             if (s == 0)
                 return 0;
-            
 
-            s = (int) Math.Ceiling(Math.Sqrt(A.Length));
+
+            s = (int)Math.Ceiling(Math.Sqrt(A.Length));
 
             while (s >= 0)
             {
